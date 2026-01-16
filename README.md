@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+## Why This Project?
+* This project demonstrates how to:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* Lift and manage shared state in React
 
-## Available Scripts
+* Build reusable, composable components
 
-In the project directory, you can run:
+* Handle derived state without unnecessary re-renders
 
-### `npm start`
+* Apply real-world UI logic (sorting, toggling, bulk actions)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Write readable, maintainable React code
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack 
+* React 19
 
-### `npm test`
+* JavaScript (ES6+)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* CSS (custom styling)
 
-### `npm run build`
+* Create React App
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Application Architecture
+App (state owner)
+│
+├── Logo (presentational)
+├── Form (controlled inputs → emits new items)
+├── PackingList
+│   ├── Item (stateless, reusable)
+│   └── Sorting & list actions
+└── Stats (derived state)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Key React Concepts Demonstrated
+* Lifting State Up
+  * Shared state (items) is owned by App and passed down via props.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Controlled Components
+  * The form inputs are fully controlled using useState.
 
-### `npm run eject`
+* Derived State
+  * Packing statistics are calculated on the fly instead of stored.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Immutability
+  * State updates use map, filter, and spread operators.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Single Responsibility Components
+  * Each component does exactly one thing.
+ 
+## Features
+* Add items with quantity
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* Mark items as packed/unpacked
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* Sort items by:
 
-## Learn More
+  * Input order
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  * Description
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  * Packed status
 
-### Code Splitting
+* Clear entire list with confirmation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Live packing statistics
 
-### Analyzing the Bundle Size
+## Screenshots
+<img width="1919" height="930" alt="Packing List" src="https://github.com/user-attachments/assets/ded479d3-2cd0-4b46-920c-bef397bcfe0d" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Getting Started
+* npm install
 
-### Making a Progressive Web App
+* npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Further Improvements
+Since this is a learning project, the main aim was to grasp the fundamental concepts of react and use them in practice. However, as time goes on I would add localStorage, add an edit functionality, improve accessibility(ARIA labels) and migrate to Vite for faster builds.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
